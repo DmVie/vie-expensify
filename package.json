@@ -4,7 +4,10 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "dev": "webpack-dev-server --env pants"
+    "dev": "webpack-dev-server",
+    "build:prod": "webpack -p --env production",
+    "build:dev": "webpack",
+    "heroku-postbuild": "npm run build:prod"
   },
   "keywords": [],
   "author": "",
