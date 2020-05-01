@@ -3,11 +3,12 @@ const MiniExtractCssPlugin = require('mini-css-extract-plugin');
 const webpack = require('webpack');
 
 process.env.NODE_ENV = process.env.NODE_ENV || 'development';
+console.log(process.env.NODE_ENV)
 
 if(process.env.NODE_ENV === 'test') {
-  require('dotenv').config({path: 'development'})
+  require('dotenv').config()
 }else if(process.env.NODE_ENV === 'development') {
-  require('dotenv').config({path: '.env.development'})
+  require('dotenv').config({path: 'env.development'})
 }
 
 module.exports = (env) => {
@@ -30,7 +31,7 @@ module.exports = (env) => {
         'process.env.FIREBASE_STORAGE_BUCKET': JSON.stringify(process.env.FIREBASE_STORAGE_BUCKET),
         'process.env.FIREBASE_MESSAGING_SENDER_ID': JSON.stringify(process.env.FIREBASE_MESSAGING_SENDER_ID),
         'process.env.FIREBASE_APP_ID': JSON.stringify(process.env.FIREBASE_APP_ID),
-        'process.env.FIREBAES_MEASUREMENT_ID': JSON.stringify(process.env.FIREBAES_MEASUREMENT_ID)
+        'process.env.FIREBASE_MEASUREMENT_ID': JSON.stringify(process.env.FIREBASE_MEASUREMENT_ID)
       })
     ],
     module: {
