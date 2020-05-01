@@ -5,6 +5,7 @@
   "main": "index.js",
   "scripts": {
     "dev": "webpack-dev-server",
+    "start": "node server/app.js",
     "build:prod": "webpack -p --env production",
     "build:dev": "webpack",
     "heroku-postbuild": "npm run build:prod"
@@ -20,6 +21,7 @@
     "babel-loader": "^8.1.0",
     "babel-polyfill": "^6.26.0",
     "css-loader": "^3.5.3",
+    "express": "^4.17.1",
     "firebase": "^7.14.2",
     "history": "^4.10.1",
     "mini-css-extract-plugin": "^0.9.0",
